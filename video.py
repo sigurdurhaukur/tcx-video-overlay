@@ -15,6 +15,8 @@ class Video:
         if len(videos) == 0:
             raise Exception("No videos found in the data directory")
 
+        # sort videos by title (numerically)
+        videos.sort()
         return videos
 
     def concat_videos(self, output_file="raw.mp4"):
@@ -36,4 +38,4 @@ class Video:
 
 if __name__ == "__main__":
     video = Video("./data/videos")
-    video.concat_videos(output_file="raw.mp4")
+    print(video.videos)
